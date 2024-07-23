@@ -1,0 +1,72 @@
+{
+    "name": "nalzai35/filament-currency",
+    "description": "This is my package filament-currency",
+    "keywords": [
+        "nalzai35",
+        "laravel",
+        "filament-currency"
+    ],
+    "homepage": "https://github.com/nalzai35/filament-currency",
+    "support": {
+        "issues": "https://github.com/nalzai35/filament-currency/issues",
+        "source": "https://github.com/nalzai35/filament-currency"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "nalzai35",
+            "email": "zainal.jelek@yahoo.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "filament/filament": "^3.0",
+        "spatie/laravel-package-tools": "^1.15.0"
+    },
+    "require-dev": {
+        "nunomaduro/collision": "^7.9",
+        "orchestra/testbench": "^8.0",
+        "pestphp/pest": "^2.1",
+        "pestphp/pest-plugin-arch": "^2.0",
+        "pestphp/pest-plugin-laravel": "^2.0"
+    },
+    "autoload": {
+        "files": [
+            "src/helpers.php"
+        ],
+        "psr-4": {
+            "Nalzai35\\FilamentCurrency\\": "src/",
+            "Nalzai35\\FilamentCurrency\\Database\\Factories\\": "database/factories/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Nalzai35\\FilamentCurrency\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Nalzai35\\FilamentCurrency\\FilamentCurrencyServiceProvider"
+            ],
+            "aliases": {
+                "FilamentCurrency": "Nalzai35\\FilamentCurrency\\Facades\\FilamentCurrency"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
