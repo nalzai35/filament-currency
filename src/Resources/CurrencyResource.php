@@ -32,7 +32,7 @@ class CurrencyResource extends Resource
                     ->numeric(),
                 Forms\Components\Group::make([
                     Forms\Components\Toggle::make('default'),
-                    Forms\Components\Toggle::make('active'),
+                    Forms\Components\Toggle::make('enabled'),
                 ])->columns(1)->columnSpanFull()
             ]);
     }
@@ -48,7 +48,7 @@ class CurrencyResource extends Resource
                 Tables\Columns\TextColumn::make('format'),
                 Tables\Columns\TextColumn::make('exchange_rate'),
                 Tables\Columns\ToggleColumn::make('default'),
-                Tables\Columns\ToggleColumn::make('active'),
+                Tables\Columns\ToggleColumn::make('enabled'),
             ])
             ->filters([
                 //
